@@ -3,7 +3,9 @@ import { Firestore } from "@google-cloud/firestore";
 
 const app = express();
 app.use(express.json());
-
+app.get("/", (req, res) => {
+  res.send("OK");
+});
 const db = new Firestore();
 
 app.post("/action", async (req, res) => {
